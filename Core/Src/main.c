@@ -102,6 +102,7 @@ int main(void)
 	  HAL_GPIO_TogglePin(D1_GPIO_Port, D1_Pin);
 	  HAL_GPIO_TogglePin(D2_GPIO_Port, D2_Pin);
 	  HAL_GPIO_TogglePin(D3_GPIO_Port, D3_Pin);
+
 	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
