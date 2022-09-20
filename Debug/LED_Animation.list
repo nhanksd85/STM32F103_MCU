@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000828a  00000000  00000000  00020035  2**0
+ 12 .debug_info   00008289  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001572  00000000  00000000  000282bf  2**0
+ 13 .debug_abbrev 00001572  00000000  00000000  000282be  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000958  00000000  00000000  00029838  2**3
+ 14 .debug_aranges 00000958  00000000  00000000  00029830  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000008a0  00000000  00000000  0002a190  2**3
+ 15 .debug_ranges 000008a0  00000000  00000000  0002a188  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001621f  00000000  00000000  0002aa30  2**0
+ 16 .debug_macro  00016225  00000000  00000000  0002aa28  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000092a9  00000000  00000000  00040c4f  2**0
+ 17 .debug_line   000092a7  00000000  00000000  00040c4d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081bd9  00000000  00000000  00049ef8  2**0
+ 18 .debug_str    00081bde  00000000  00000000  00049ef4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cbad1  2**0
+ 19 .comment      00000053  00000000  00000000  000cbad2  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002624  00000000  00000000  000cbb24  2**2
+ 20 .debug_frame  00002624  00000000  00000000  000cbb28  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -119,10 +119,8 @@ int main(void)
   setTimer(100);
  8000166:	2064      	movs	r0, #100	; 0x64
  8000168:	f000 f90c 	bl	8000384 <setTimer>
-//	  HAL_GPIO_TogglePin(D0_GPIO_Port, D0_Pin);
-//	  HAL_GPIO_TogglePin(D1_GPIO_Port, D1_Pin);
-//	  HAL_GPIO_TogglePin(D2_GPIO_Port, D2_Pin);
-//	  HAL_GPIO_TogglePin(D3_GPIO_Port, D3_Pin);
+  while (1)
+  {
 
 	  if(timer1_flag == 1){
  800016c:	4b06      	ldr	r3, [pc, #24]	; (8000188 <main+0x3c>)
@@ -383,14 +381,14 @@ static void MX_GPIO_Init(void)
  80002e2:	683b      	ldr	r3, [r7, #0]
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, D1_Pin|D0_Pin|LED_RED_Pin|D2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, D1_Pin|D0_Pin|LED_RED_Pin|D2_Pin, 0);
  80002e4:	2200      	movs	r2, #0
  80002e6:	f240 412c 	movw	r1, #1068	; 0x42c
  80002ea:	481c      	ldr	r0, [pc, #112]	; (800035c <MX_GPIO_Init+0xbc>)
  80002ec:	f000 fc16 	bl	8000b1c <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, HIGH);
  80002f0:	2200      	movs	r2, #0
  80002f2:	2108      	movs	r1, #8
  80002f4:	481a      	ldr	r0, [pc, #104]	; (8000360 <MX_GPIO_Init+0xc0>)

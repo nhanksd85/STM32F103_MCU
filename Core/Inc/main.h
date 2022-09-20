@@ -68,6 +68,7 @@ void Error_Handler(void);
 #define D2_GPIO_Port GPIOA
 #define D3_Pin GPIO_PIN_3
 #define D3_GPIO_Port GPIOB
+#define HIGH GPIO_PIN_RESET
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
