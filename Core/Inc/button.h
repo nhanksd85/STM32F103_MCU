@@ -13,7 +13,8 @@
 #define NORMAL_STATE SET
 #define PRESSED_STATE RESET
 
-void getKeyInput();
+extern int button1_flag;
 
+void getKeyInput();
 
 #endif /* INC_BUTTON_H_ */

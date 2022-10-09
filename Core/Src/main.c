@@ -24,6 +24,8 @@
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
 #include "button.h"
+#include "fsm_automatic.h"
+#include "fsm_manual.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,7 +76,6 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -95,22 +96,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(100);
+
+  status = INIT;
+
   while (1)
   {
-
-//	  if(timer1_flag == 1){
-//		  setTimer(100);
-//		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-//		  HAL_GPIO_TogglePin(A_GPIO_Port, A_Pin);
-//		  HAL_GPIO_TogglePin(D2_GPIO_Port, D2_Pin);
-//
-//	  }
-//	  if(HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin) == SET){
-//		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-//	  }else{
-//		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-//	  }
+	  fsm_manual_run();
+	  fsm_automatic_run();
 
     /* USER CODE END WHILE */
 
@@ -247,16 +239,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(D3_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : UserButton_Pin */
+  GPIO_InitStruct.Pin = UserButton_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(UserButton_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
-int counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	counter--;
-//	if(counter <= 0){
-//		counter = 100;
-//		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-//	}
 	timerRun();
 	getKeyInput();
 }
