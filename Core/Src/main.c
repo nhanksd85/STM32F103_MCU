@@ -106,14 +106,19 @@ int main(void)
 
   status = INIT;
   setTimer1(1000);
-  uint8_t str[50];
+
+  char str[50];
+
   while (1)
   {
 	  if(timer1_flag == 1){
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  HAL_UART_Transmit(&huart2, str, sprintf(str, "%s","!Hello1343#"), 1000);
+		  HAL_GPIO_TogglePin(D2_GPIO_Port, D2_Pin);
+		  //HAL_GPIO_TogglePin(D3_GPIO_Port, D3_Pin);
 
-		  setTimer1(1000);
+		  HAL_UART_Transmit(&huart2, str, sprintf(str, "%s","!1:T:29.5#"), 1000);
+
+		  setTimer1(2000);
 	  }
 
     /* USER CODE END WHILE */
