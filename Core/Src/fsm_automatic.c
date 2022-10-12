@@ -23,6 +23,7 @@ void fsm_automatic_run(){
 				status = MAN_RED;
 				setTimer1(10000);
 			}
+
 			break;
 		case AUTO_GREEN:
 			//TODO

@@ -21,7 +21,13 @@ void clearTimer1(){
 	timer1_counter = 0;
 	timer1_flag = 0;
 }
-
+int isTimer1Expired(){
+	if(timer1_flag == 1){
+		timer1_flag = 0;
+		return 1;
+	}
+	return 0;
+}
 
 void setTimer2(int duration){
 	timer2_counter = duration/TICK;
