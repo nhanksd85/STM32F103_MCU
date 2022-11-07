@@ -26,6 +26,7 @@
 #include "button.h"
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
+#include "scheduler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -66,6 +67,9 @@ static void MX_TIM2_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+void led1test(){
+	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -76,6 +80,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -98,11 +103,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   status = INIT;
-
+  SCH_Init();
+  SCH_Add_Task(led1test, 100, 50);
   while (1)
   {
-	  fsm_manual_run();
-	  fsm_automatic_run();
+	  SCH_Dispatch_Tasks();
+
+	  //fsm_manual_run();
+	  //fsm_automatic_run();
+
 
     /* USER CODE END WHILE */
 
@@ -249,8 +258,9 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timerRun();
-	getKeyInput();
+	//timerRun();
+	//getKeyInput();
+	SCH_Update();
 }
 /* USER CODE END 4 */
 
