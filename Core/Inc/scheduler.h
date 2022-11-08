@@ -16,11 +16,11 @@ typedef struct{
 	uint32_t 	Delay;
 	uint32_t 	Period;
 	uint8_t 	RunMe;
+
 	uint32_t 	TaskID;
 }sTasks;
 
 #define SCH_MAX_TASKS	40
-#define NO_TASK_ID		0
 
 
 void SCH_Init(void);
