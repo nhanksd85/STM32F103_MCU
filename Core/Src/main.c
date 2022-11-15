@@ -69,8 +69,9 @@ static void MX_TIM2_Init(void);
   */
 
 void led1test(){
-	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+  	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 }
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -103,19 +104,11 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  SCH_Init();
+
   SCH_Add_Task(led1test, 50, 500);
 
-  while (1)
-  {
-	  SCH_Dispatch_Tasks();
-	  //fsm_manual_run();
-	  //fsm_automatic_run();
-
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+  while (1){
+	 SCH_Dispatch_Tasks();
   }
   /* USER CODE END 3 */
 }
@@ -258,9 +251,9 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	//timerRun();
-	//getKeyInput();
+
 	SCH_Update();
+
 }
 /* USER CODE END 4 */
 
