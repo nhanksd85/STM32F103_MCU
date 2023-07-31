@@ -1,0 +1,81 @@
+ARM GAS  C:\Users\KAI\AppData\Local\Temp\ccr90F17.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"global.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	status
+  16              		.section	.bss.status,"aw",%nobits
+  17              		.align	2
+  20              	status:
+  21 0000 00000000 		.space	4
+  22              		.text
+  23              	.Letext0:
+  24              		.file 1 "Core/Inc/software_timer.h"
+  25              		.file 2 "c:\\st\\stm32cubeide_1.7.0\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools
+  26              		.file 3 "c:\\st\\stm32cubeide_1.7.0\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools
+  27              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+  28              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+  29              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+  30              		.file 7 "Core/Inc/button.h"
+  31              		.file 8 "Core/Inc/global.h"
+  32              		.file 9 "./Core/Src/global.c"
+ARM GAS  C:\Users\KAI\AppData\Local\Temp\ccr90F17.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 global.c
+C:\Users\KAI\AppData\Local\Temp\ccr90F17.s:20     .bss.status:0000000000000000 status
+C:\Users\KAI\AppData\Local\Temp\ccr90F17.s:17     .bss.status:0000000000000000 $d
+                           .group:0000000000000000 wm4.0.a21ab13f311afe0255bb80aef44f75e6
+                           .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
+                           .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
+                           .group:0000000000000000 wm4.stm32f103x6.h.38.c380e9c6400cf3b45331581c31968951
+                           .group:0000000000000000 wm4._newlib_version.h.4.1ef4e12f167f8b69d7c30054be56050d
+                           .group:0000000000000000 wm4.features.h.33.318b64d71e0957639cfb30f1db1f7ec8
+                           .group:0000000000000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:0000000000000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:0000000000000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:0000000000000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:0000000000000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
+                           .group:0000000000000000 wm4.core_cm3.h.66.fc46cac19810db8f98d67da7ef88f42c
+                           .group:0000000000000000 wm4.cmsis_gcc.h.26.225e4f5469716fdeef823d1102f5b23e
+                           .group:0000000000000000 wm4.core_cm3.h.127.f4474120f1a7524deb56f9d74ff175da
+                           .group:0000000000000000 wm4.stm32f103x6.h.568.9fd852b5e75beca9bb663a0bce9fae78
+                           .group:0000000000000000 wm4.stm32f1xx.h.162.96b09079a093c34dbd7f0b85cbd0ddee
+                           .group:0000000000000000 wm4.stm32_hal_legacy.h.23.91ba5b544a4c2be2620a1e7ff0049e10
+                           .group:0000000000000000 wm4.stddef.h.39.144cf5ddcd53cbfdac30259dc1a6c87f
+                           .group:0000000000000000 wm4.stm32f1xx_hal_def.h.57.18d01ce1aa74e9fb44dbf16f821a574a
+                           .group:0000000000000000 wm4.stm32f1xx_hal_rcc.h.95.21591bbc513aaa813c0b8640c3b32517
+                           .group:0000000000000000 wm4.stm32f1xx_hal_rcc_ex.h.22.3a0b7e8041b3028f6cff6afd78fd4b60
+                           .group:0000000000000000 wm4.stm32f1xx_hal_rcc.h.1202.f8e5f9e0cf4eef7840facf5396029056
+                           .group:0000000000000000 wm4.stm32f1xx_hal_gpio.h.22.fa638d688dcc57ca806fe6a7831b0d04
+                           .group:0000000000000000 wm4.stm32f1xx_hal_gpio_ex.h.22.617211ec6e7b3eddc2f02f2368733652
+                           .group:0000000000000000 wm4.stm32f1xx_hal_gpio.h.263.f5ebf2f545ade59412ab9261c8e35dc4
+                           .group:0000000000000000 wm4.stm32f1xx_hal_exti.h.22.dc59ac364fa012cb16d8761e7084fd2f
+                           .group:0000000000000000 wm4.stm32f1xx_hal_dma.h.22.3c14338534886827bf3aeaa2a7f412a1
+                           .group:0000000000000000 wm4.stm32f1xx_hal_dma_ex.h.22.001ac4d7f81ccbdcae49bd65c13858c8
+                           .group:0000000000000000 wm4.stm32f1xx_hal_dma.h.409.cafcd2cfe701091535636be537c18293
+                           .group:0000000000000000 wm4.stm32f1xx_hal_cortex.h.22.b5f4174bb6a50d95405567b8f50e0900
+                           .group:0000000000000000 wm4.stm32f1xx_hal_flash.h.22.5cea9a7210e6315b41724b47b5fdf203
+                           .group:0000000000000000 wm4.stm32f1xx_hal_flash_ex.h.22.de0d1acc862cc89e7d650af43a77624f
+                           .group:0000000000000000 wm4.stm32f1xx_hal_pwr.h.22.3438c476faafc3240bf146f143df3fcd
+                           .group:0000000000000000 wm4.stm32f1xx_hal_tim.h.22.a16e206564e97dbace9faae59a0d6008
+                           .group:0000000000000000 wm4.stm32f1xx_hal_uart.h.22.5f7992e497faa36aa98f09f7214f4dbb
+                           .group:0000000000000000 wm4.stm32f1xx_hal.h.88.b8fc6489a2f01723e8d9e391c1072aa4
+                           .group:0000000000000000 wm4.main.h.61.74d1da09ab2b5e68d645d6eba4bce708
+                           .group:0000000000000000 wm4.button.h.13.05acf9da876b1f6b3b074679a1d14a8a
+                           .group:0000000000000000 wm4.global.h.14.906fb00adb81f4d68e9f5708d5ec470c
+
+NO UNDEFINED SYMBOLS
