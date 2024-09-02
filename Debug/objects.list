@@ -1,4 +1,6 @@
 "./Core/Src/exercise1.o"
+"./Core/Src/exercise10.o"
+"./Core/Src/exercise4.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
 "./Core/Src/stm32f1xx_it.o"
